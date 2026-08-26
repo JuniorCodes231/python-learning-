@@ -1,0 +1,24 @@
+import random
+
+score = 0
+
+while True:
+    secret_number = random.randint(1,10)
+    
+    guess = input("Guess 1-10 or type 'q' to quit: ")  
+
+    # CHECK IF THEY WANT TO QUIT
+    if guess == "q":
+        print(f"Game over! Final Score: {score}. Bye bro")
+        break
+
+    # TURN IT INTO A NUMBER NOW
+    guess = int(guess)
+
+    if guess == secret_number:
+        score = score + 1
+        print(f"YESSIR! You got it!  Score: {score}")
+    elif guess < secret_number:
+        print("Too LOW! Try higher ")
+    elif guess > secret_number:
+        print("Too HIGH! Try lower ")
